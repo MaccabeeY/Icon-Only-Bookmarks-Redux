@@ -1,9 +1,8 @@
 {
    "background": {
-      "persistent": false,
-      "scripts": [ "background.js" ]
-   },
-   "browser_action": {
+      "service_worker": "background.js"
+  },
+   "action": {
       "default_icon": {
          "128": "images/icon128off.png",
          "16": "images/icon16off.png",
@@ -11,17 +10,15 @@
          "48": "images/icon48off.png"
       }
    },
-   "description": "Hides bookmark name text for a cleaner looking Bookmarks Bar.",
+   "description": "A Redux of \"Icon Only Bookmarks\" that hides bookmark name text for a cleaner looking Bookmarks Bar.",
    "icons": {
       "128": "images/icon128.png",
       "16": "images/icon16.png",
       "32": "images/icon32.png",
       "48": "images/icon48.png"
    },
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA09Eq43Ok7wouFSgIhHlk/1ii/bVO9C+u0I7ImDH5OPEeUDos4JGTwKdQKVmlzWqD1x+YcDw3M9pQodANDzDVWtRfb2/nT48szvQQU9n0QQN6+7sOujOVRFHmMK+WzfrzQ7HqHA9UQ4QqJHu97DpZmz/d43qRnfa65UL4/eftLZnOoss+rOfY+qHlHosuomrw9ZDR19idrFrK24E04gx+u76Lz11RpIAtRvox2tgA0pIxzUcFzvNEwI61fqyORLhsZbmxvTXE2NtzNCGq8PV2XK6pV7x2p5dB0wqPQ7lIMGi1Qdof6JuIZNHclMgjkPxffCp+EGpKnz1anSBzeS/v+QIDAQAB",
-   "manifest_version": 2,
-   "name": "Icon Only Bookmarks",
+   "manifest_version": 3,
+   "name": "Icon Only Bookmarks Redux",
    "permissions": [ "bookmarks", "storage" ],
-   "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "1.0.0"
+   "version": "2.0.0"
 }

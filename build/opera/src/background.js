@@ -6,7 +6,7 @@ chrome.runtime.onStartup.addListener(() => {
     let isEmpty = Object.keys(data).length === 0 && data.constructor === Object;
     if (!isEmpty) {
       if (data.toggle === 'off') {
-        chrome.browserAction.setIcon({ path: 'images/icon32off.png' });
+        chrome.action.setIcon({ path: 'images/icon32off.png' });
       } else {
         chrome.browserAction.setIcon({ path: 'images/icon32.png' });
       }
@@ -40,13 +40,13 @@ const onChangeListener = (chdbmid) => {
 chrome.bookmarks.onChanged.addListener(onChangeListener);
 
 // update icon and store/modify bookmarks when clicked
-chrome.browserAction.onClicked.addListener(() => {
+chrome.action.onClicked.addListener(() => {
   chrome.bookmarks.onChanged.removeListener(onChangeListener);
   chrome.storage.local.get('toggle', (data) => {
     let isEmpty = Object.keys(data).length === 0 && data.constructor === Object;
     if (isEmpty || data.toggle === 'off') {
       chrome.storage.local.set({ 'toggle': 'on' });
-      chrome.browserAction.setIcon({ path: 'images/icon32.png' });
+      chrome.action.setIcon({ path: 'images/icon32.png' });
       chrome.bookmarks.getSubTree('1', (results) => {
         // store bookmarks
         chrome.storage.local.set({ 'userBookmarks': results });
@@ -58,7 +58,7 @@ chrome.browserAction.onClicked.addListener(() => {
       });
     } else {
       chrome.storage.local.set({ 'toggle': 'off' });
-      chrome.browserAction.setIcon({ path: 'images/icon32off.png' });
+      chrome.action.setIcon({ path: 'images/icon32off.png' });
       chrome.storage.local.get('userBookmarks', (userBookmarks) => {
         chrome.bookmarks.getSubTree('1', (results) => {
           for (let i = 0; i < results[0].children.length; i++) {
