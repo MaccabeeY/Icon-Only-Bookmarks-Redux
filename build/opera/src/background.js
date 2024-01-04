@@ -8,7 +8,7 @@ chrome.runtime.onStartup.addListener(() => {
       if (data.toggle === 'off') {
         chrome.action.setIcon({ path: 'images/icon32off.png' });
       } else {
-        chrome.browserAction.setIcon({ path: 'images/icon32.png' });
+        chrome.action.setIcon({ path: 'images/icon32.png' });
       }
     }
   });
