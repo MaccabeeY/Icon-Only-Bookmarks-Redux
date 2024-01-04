@@ -20,5 +20,5 @@
    "manifest_version": 3,
    "name": "Icon Only Bookmarks Redux",
    "permissions": [ "bookmarks", "storage" ],
-   "version": "2.0.2"
+   "version": "2.0.3"
 }
